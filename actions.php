@@ -43,5 +43,6 @@ else if($action=='supprimermbr'){
 	rmdir("Images/$membre");
 	$membre=$mon_id;
 }
+
 header('location: profil.php?membre='.$membre);
 ?>

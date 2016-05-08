@@ -1,17 +1,14 @@
-<!DOCTYPE html>
+
 <html>
 
     <head>
 	<?php include_once('fonctions.php');?>
 		<link rel="stylesheet" href="PandaRoid.css" />
-		<script type="text/javascript" src="PandaRoid.js"></script>
 		<link rel="stylesheet" href="lightbox2-master/dist/css/lightbox.min.css">
 		<link rel="shortcut icon" href="tetedepanda.ico"/>
 		<!-- ADAPTER LA TAILLE A TOUS LES ECRANS !-->
 		<script type='text/javascript' src='//code.jquery.com/jquery-1.9.1.js'></script>
-		<script type="text/javascript">
-
-</script>
+		<script type="text/javascript" src="PandaRoid.js"></script>
 		<meta name="viewport" content="width=device-width" />
         <meta charset="utf-8" />
         <title>PandaRoid</title>
@@ -55,8 +52,8 @@
     <body>
 		<div id="fond">
 			<div id="contenu">
-			
-			<form id = "uploadform" action="upload_photo.php" method="post" enctype="multipart/form-data" runat="server" >
+		
+		<form id = "uploadform"  action="upload_photo.php" method="post" enctype="multipart/form-data" runat="server" >
 					<img id="sortir" src="Image/croix.png" alt="fermer" onClick="annuler4()"/>
 					<div id="ajout">
 					Ajouter votre photo
@@ -68,9 +65,6 @@
 					<input type="text" name="titre" placeholder="Titre de la photo"><br><br>
 					<input type="text" name="lieu" placeholder="Lieu de la photo"><br><br>
 					<input id="upphotovalid" type="submit" name= "valider" value="Valider"  >
-					<div id="erreur"><?php
-			if (isset($erreur)) echo '<br />',$erreur;
-		?></div>	
 					
 			</form>
 		

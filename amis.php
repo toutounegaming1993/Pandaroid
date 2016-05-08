@@ -3,13 +3,12 @@
 
     <head>
 		<link rel="stylesheet" href="PandaRoid.css" />
-		<script type="text/javascript" src="PandaRoid.js"></script>
 		<link rel="shortcut icon" href="tetedepanda.ico"/>
 		<!-- ADAPTER LA TAILLE A TOUS LES ECRANS !-->
 		<script type='text/javascript' src='//code.jquery.com/jquery-1.9.1.js'></script>
-		<script type="text/javascript">
+		
 		<?php include_once('fonctions.php');?>
-</script>
+<script type="text/javascript" src="PandaRoid.js"></script>
 		<meta name="viewport" content="width=device-width" />
         <meta charset="utf-8" />
         <title>PandaRoid</title>
@@ -68,7 +67,7 @@
 					<input id="upphotovalid" type="submit" name= "valider" value="Valider"  >
 					
 			</form>
-				
+			
 			<form id = "form" action="amis.php" method="post" enctype="multipart/form-data" runat="server" >
 				Les membres du site:<br>
 				<?php

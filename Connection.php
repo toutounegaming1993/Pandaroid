@@ -187,7 +187,7 @@ if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider') {
 					<input type="password" name="mdp2" placeholder="Confirmer mot de passe"><br><br>
 					<input id="submit" type="submit" name= "valider2" value="Valider" >
 					
-					<label class = "erreur" ><?php if (isset($erreur2)) echo '<br />',$erreur;?></label>
+					<label class = "erreur" ><?php if (isset($erreur2)) echo '<br />',$erreur2;?></label>
 					
 				</form>
 			</div>
