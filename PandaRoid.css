@@ -142,8 +142,7 @@
 	margin: 10px 0 0 0;   
 	text-transform: uppercase;   
 	color: #ffffff;   
-	text-decoration: none;
-}
+}
 
 .b_social:hover, .b_social:active {
     background-color: #63B6AF;
@@ -169,10 +168,9 @@
 	height: 940px;
 	width: 60%;
 	margin-left: 20%;
-	margin-right: auto;
+	margin-right: 20%;
 	min-width: 1000px;
 	background-color: white;
-	font-family: Calibri Light;
 }
 
 #uploadform{
@@ -260,13 +258,16 @@
 	max-height:100px;
 	max-width:200px;
 }
+#form_image{
+height: auto;
+width: 60%;
 
-#form{
-	color: black;
-	padding-top: 20px;
-	padding-left:10%;
+table-layout:fixed;
+
 }
-
+#form_image td {
+word-wrap:break-word;
+}
 #footer {
 	display: block;
 	height: 150px;

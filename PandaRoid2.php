@@ -11,7 +11,6 @@
         <meta charset="utf-8" />
 		<script type='text/javascript' src='//code.jquery.com/jquery-1.9.1.js'></script>
 		<script type="text/javascript" src="PandaRoid.js"></script>
-		
 		<?php include_once('fonctions.php');?>
 			
         <title>PandaRoid</title>
@@ -57,7 +56,7 @@
 		<div id="fond">
 			<div id="contenu">
 			
-			<form id = "uploadform" action="upload_photo.php" method="post" enctype="multipart/form-data" runat="server" >
+			<form id = "uploadform"  action="upload_photo.php" method="post" enctype="multipart/form-data" runat="server" >
 					<img id="sortir" src="Image/croix.png" alt="fermer" onClick="annuler1()"/>
 					<div id="ajout">
 					Ajouter votre photo
@@ -73,7 +72,7 @@
 				</form>
 			
 				<table>
-				<tr>
+				
 				
 				<?php
 				

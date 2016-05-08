@@ -69,15 +69,15 @@
 			</form>
 			
 			<form id = "form" action="amis.php" method="post" enctype="multipart/form-data" runat="server" >
-				Les membres du site:<br><br>
+				Les membres du site:<br>
 				<?php
 					non_amis($bdd);
 				?>
-				<br><br><br><br>Vos amis:<br><br>
+				<br><br>Les membres du site qui sont vos amis:
 				<?php
 					amis($bdd);
 				?>
-				<br><br><br><br>Vos demandes d'amis:<br><br>
+				<br><br>Vos demandes d'amis:
 				<?php
 				req_amis($bdd)
 				?>

@@ -14,7 +14,7 @@ if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider') {
 		$erreur2 = 'Les deux mots de passe ne correspondent pas';
 	}
 	elseif(!preg_match("~^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$~i",$email_ins)){
-		$erreur2 = 'Adresse e-mail invalide';
+		$erreur2 = 'Addresse e-mail invalide';
 	}
 	else {
 		
@@ -48,7 +48,7 @@ if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider') {
 				}
 				else
 				{
-					$erreur2='Un membre possède déjà cet e-mail';
+					$erreur2='Un membre possède déjà cet email.';
 					
 				}	
 			}
@@ -60,7 +60,7 @@ if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider') {
 		}
 	}
 	else {
-	$erreur2 = 'Attention: au moins un des champs est vide';
+	$erreur2 = 'Au moins un des champs est vide.';
 	}
 
 }
