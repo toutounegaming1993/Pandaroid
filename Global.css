@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+	height:100%;
+}
+
+body {
+	height:100%;
+	width: 100%;	
+    background-image: url("Image/pandaB.jpg");
+}
+.Panda_logo img
+{
+	width:180px;
+	height:auto;
+	display: block;
+}
