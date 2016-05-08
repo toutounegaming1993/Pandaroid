@@ -67,6 +67,10 @@
 					<input type="text" name="lieu" placeholder="Lieu de la photo"><br><br>
 					<input id="upphotovalid" type="submit" name= "valider" value="Valider"  >
 					
+					<div id="erreur"><?php
+			if (isset($erreur)) echo '<br />',$erreur;
+		?></div>	
+					
 			</form>
 				
 			<form id = "form" action="amis.php" method="post" enctype="multipart/form-data" runat="server" >
@@ -83,9 +87,7 @@
 				req_amis($bdd)
 				?>
 			</form>
-			<p><?php
-			if (isset($erreur)) echo '<br />',$erreur;
-		?></p>
+			
 			</div>
 		</div>
 	</body>

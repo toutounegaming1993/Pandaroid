@@ -6,6 +6,10 @@ function photo(){
 	document.getElementById('uploadform').classList.remove("hidden");
 }
 
+function annuler0(){
+	document.location.href="PandaRoid.php";
+}
+
 function annuler1(){
 	document.getElementById('uploadform').classList.add("hidden");
 	document.location.href="PandaRoid.php";
@@ -35,4 +39,18 @@ function readURL(input) {
 					reader.readAsDataURL(input.files[0]);
 				   }
 				document.getElementById('uploadform').style.height = "400px";
+				}
+				
+				
+				
+				
+function readURLerror(input) {
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function (e) {
+					$('#image').attr('src', e.target.result);
+				   }
+					reader.readAsDataURL(input.files[0]);
+				   }
+				document.getElementById('uploadformerror').style.height = "400px";
 				}

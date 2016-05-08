@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
 
     <head>
@@ -68,6 +68,9 @@
 					<input type="text" name="titre" placeholder="Titre de la photo"><br><br>
 					<input type="text" name="lieu" placeholder="Lieu de la photo"><br><br>
 					<input id="upphotovalid" type="submit" name= "valider" value="Valider"  >
+					<div id="erreur"><?php
+			if (isset($erreur)) echo '<br />',$erreur;
+		?></div>	
 					
 			</form>
 		

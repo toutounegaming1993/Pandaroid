@@ -53,7 +53,7 @@
 		</div>
 	</header>
 	
-    <body onLoad="loading()">
+    <body>
 		<div id="fond">
 			<div id="contenu">
 			
@@ -76,7 +76,6 @@
 				<tr>
 				
 				<?php
-				
 					diapo($bdd);
 				?>
 				</tr>

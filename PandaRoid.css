@@ -165,13 +165,12 @@
 }
 
 #contenu {
-	
 	height: 940px;
 	width: 60%;
 	margin-left: 20%;
 	margin-right: auto;
 	min-width: 1000px;
-	border-style: solid;
+	background-color: white;
 }
 
 #uploadform{
@@ -186,8 +185,28 @@
 	margin-left: 20%;
 	padding-top: 30px;
 	margin-top: -100px;
+	z-index: 1000;
 }
 
+#uploadformerror{
+	position: fixed;
+	background: #AFDBE2;
+	height: 320px;
+	width: 20%;
+	border-style: solid;
+	border-color: #63B6AF;
+	border-width: 2px;
+	text-align: center;
+	margin-left: 40%;
+	padding-top: 30px;
+	margin-top: -100px;
+	
+}
+
+#erreur{
+	color: red;
+	font-family: Raleway, sans-serif;
+}
 
 #upphotovalid{
 	background-color: #63B6AF;   
