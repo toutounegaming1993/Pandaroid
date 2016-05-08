@@ -54,3 +54,7 @@ function readURLerror(input) {
 				   }
 				document.getElementById('uploadformerror').style.height = "400px";
 				}
+				
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});

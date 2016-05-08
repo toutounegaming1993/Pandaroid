@@ -7,8 +7,3 @@ function annuler(){
 	document.getElementById('popup').classList.add("hidden");
 	document.getElementById('Tableauform').classList.remove("hidden");
 }
-
-function erreur(){
-	alert("aux gogoles")
-	document.getElementById('popupup').classList.remove("hidden");
-}
