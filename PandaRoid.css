@@ -46,10 +46,10 @@
 .nom_proprietaire {
     position: absolute;
     top: 0;
-    color:#f00;
+    color:white;
 	font-family: Raleway, sans-serif;
-	font-weight:bold;
-    background-color:rgba(255,255,255,0.8);
+	font-size: 15px;
+    background-color:rgba(141,206,223,0.8);
 	width: 200px;
     height: 200px;
     line-height:200px;
@@ -133,15 +133,16 @@
 	border-width: 1px;   
 	border-color: #AFDBE2;   
 	padding: 5px 10px 5px 10px;   
-	width: 170px;   
-	box-sizing: border-box;   
+	width: 200px;    
 	font-family: PT sans;   
 	font-size: 13px;   
-	font-weight: normal;   
-	letter-spacing: 2px;   
+	font-weight: normal;     
 	margin: 10px 0 0 0;   
 	text-transform: uppercase;   
 	color: #ffffff;   
+	text-decoration: none;
+	margin-left: 30px;
+	margin-right: 30px;
 }
 
 .b_social:hover, .b_social:active {
@@ -160,17 +161,24 @@
 	
 }
 #fond {
-	height: 1000px;
+	height: 1400px;
 	background-color: #F5F5F2;
 }
 
 #contenu {
-	height: 940px;
+	height: 1340px;
 	width: 60%;
 	margin-left: 20%;
 	margin-right: 20%;
 	min-width: 1000px;
 	background-color: white;
+	font-family: Raleway, sans-serif;
+	padding-top: 20px;
+	padding-left: 20px;
+	border-top:solid;
+	border-top-color: #F5F5F2;
+	border-top-width: 4px;
+	
 }
 
 #uploadform{

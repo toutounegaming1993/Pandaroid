@@ -23,7 +23,7 @@
 			echo $prenom; 
 			?></a></li>
 			<li id="links"><a href="profil2.php">PARTAGER UNE PHOTO</a></li>
-			<li id="links"><a href="diapo.php">ALBUMS</a></li>
+			<li id="links"><a href="album.php">ALBUMS</a></li>
 			<li id="links"><a href="amis.php">AMIS</a></li>
 			<?php 
 			if($_SESSION['admin']=='1'){
@@ -94,13 +94,14 @@
 					$mon_id=$_SESSION['id'];
 					if($membre!=$mon_id){
 						if($admin=='1'){
+						echo "Membre: $nom $prenom <br><br>";
 						echo "<a href='actions.php?action=supprimermbr&membre=$membre' class='b_social'> Supprimer</a> |  " ;
 						echo "<a href='actions.php?action=admin&membre=$membre' class='b_social'> Rendre administrateur</a> |  " ;
 						}
 						$res = $bdd->query("SELECT * FROM amis WHERE (membre1_id='$mon_id' AND membre2_id='$membre') OR(membre1_id='$membre' AND membre2_id='$mon_id')");
 						$rows=$res->rowCount();
 						if($rows==1){
-							echo "<a href='#' class='b_social'> Vous êtes déjà amis</a> | <a href='actions.php?action=enlever&membre=$membre' class='b_social'> Retirer $prenom $nom de ma liste d'amis</a> " ;
+							echo "<a href='#' class='b_social'> Vous êtes déjà amis</a> | <a href='actions.php?action=enlever&membre=$membre' class='b_social'> Retirer $prenom $nom de ma liste d'amis</a><br><br> " ;
 							photo_amis($bdd,$membre);
 						}
 							
@@ -114,7 +115,7 @@
 								echo "<a href='actions.php?action=annuler&membre=$membre' class='b_social'> Annuler la demande</a> ";
 							}
 							else{
-								echo"<a href='actions.php?action=envoie&membre=$membre' class='b_social'> Envoyer une demande d'amis</a> ";
+								echo"<a href='actions.php?action=envoie&membre=$membre' class='b_social'> Envoyer une demande d'amis</a><br><br> ";
 							}
 								
 						}

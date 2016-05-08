@@ -102,7 +102,7 @@ if (isset($_POST['valider']) AND $_POST['valider'] == 'Valider') {
 		<div id="fond">
 			<div id = "Contenu">
 			
-				<form id = "uploadform"  class="hidden" action="upload_photo.php" method="post" enctype="multipart/form-data" runat="server" >
+				<form id = "uploadform"  action="upload_photo.php" method="post" enctype="multipart/form-data" runat="server" >
 					<img id="sortir" src="Image/croix.png" alt="fermer" onClick="annuler5()"/>
 					<div id="ajout">
 					Ajouter votre photo

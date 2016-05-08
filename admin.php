@@ -14,7 +14,7 @@ if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider') {
 		$erreur2 = 'Les deux mots de passe ne correspondent pas';
 	}
 	elseif(!preg_match("~^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$~i",$email_ins)){
-		$erreur2 = 'Addresse e-mail invalide';
+		$erreur2 = 'Adresse e-mail invalide';
 	}
 	else {
 		
@@ -48,7 +48,7 @@ if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider') {
 				}
 				else
 				{
-					$erreur2='Un membre possède déjà cet email.';
+					$erreur2='Un membre possède déjà cet email';
 					
 				}	
 			}
@@ -60,7 +60,7 @@ if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider') {
 		}
 	}
 	else {
-	$erreur2 = 'Au moins un des champs est vide.';
+	$erreur2 = 'Attention: au moins un des champs est vide';
 	}
 
 }
@@ -94,7 +94,7 @@ if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider') {
 			echo $prenom; 
 			?></a></li>
 			<li id="links"><a href="admin2.php">PARTAGER UNE PHOTO</a></li>
-			<li id="links"><a href="diapo.php">ALBUMS</a></li>
+			<li id="links"><a href="album.php">ALBUMS</a></li>
 			<li id="links"><a href="amis.php">AMIS</a></li>
 			<?php 
 			if($_SESSION['admin']=='1'){
@@ -126,7 +126,7 @@ if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider') {
 			<div id="contenu">
 				
 				<form id = "uploadform" class="hidden" action="upload_photo.php" method="post" enctype="multipart/form-data" runat="server" >
-					<img id="sortir" src="Image/croix.png" alt="fermer" onClick="annuler()"/>
+					<img id="sortir" src="Image/croix.png" alt="fermer" onClick="annuler2()"/>
 					<div id="ajout">
 					Ajouter votre photo
 					</div>

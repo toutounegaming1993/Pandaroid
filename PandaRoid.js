@@ -30,6 +30,12 @@ function annuler4(){
 	document.location.href="profil.php";
 }
 
+function annuler5(){
+	document.getElementById('uploadform').classList.add("hidden");
+	document.location.href="album.php";
+}
+
+
 function readURL(input) {
 				if (input.files && input.files[0]) {
 					var reader = new FileReader();
