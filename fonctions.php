@@ -11,7 +11,7 @@ function non_amis($bdd){
 		$membre_id=$non_amis['id'];
 		$nom=$non_amis['nom'];
 		$prenom=$non_amis['prenom'];
-		echo "<a href='profil.php?membre=$membre_id' class='b_social'>$prenom $nom</a>";
+		echo "<a href='profil.php?membre=$membre_id' class='b_social' data-toggle='tooltip' title='Accéder au profil' >$prenom $nom</a>";
 	}
 				
 }
@@ -26,7 +26,7 @@ function liste_membre_admin($bdd)
 		$membre_id=$membre['id'];
 		$nom=$membre['nom'];
 		$prenom=$membre['prenom'];
-		echo "<a href='profil.php?membre=$membre_id&admin=$admin' class='b_social'>$prenom $nom</a>";
+		echo "<a href='profil.php?membre=$membre_id&admin=$admin' class='b_social' data-toggle='tooltip' title='Accéder au profil'>$prenom $nom</a>";
 		
 	}
 }
@@ -54,7 +54,7 @@ function amis($bdd){
 			$pre=$nom['prenom'];
 			
 		}
-		echo "<a href='profil.php?membre=$membre'>$pre $n</a>";
+		echo "<a href='profil.php?membre=$membre' class='b_social' data-toggle='tooltip' title='Accéder au profil'>$pre $n</a>";
 	}
 }
 function retourner_nom_amis($bdd,$amis){
@@ -96,7 +96,7 @@ function req_amis($bdd){
 				$pren=$nom['prenom'];
 				
 			}
-			echo "<a href='profil.php?membre=$membre'>$pren $no</a>";
+			echo "<a href='profil.php?membre=$membre' class='b_social' data-toggle='tooltip' title='Accéder au profil'>$pren $no</a>";
 	}
 }
 function diapo($bdd){
@@ -154,9 +154,9 @@ function mes_photos($bdd){
 			echo "</br>";
 			echo'<form id = "form_image" method="post">';
 			if($diap['publique']==0)
-				echo"<a href='actions.php?action=publier&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Publier</a>";
+				echo"<a href='actions.php?action=publier&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Publier</a><br>";
 			else
-				echo"<a href='actions.php?action=priver&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Rendre Privé</a>";
+				echo"<a href='actions.php?action=priver&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Rendre Privé</a><br>";
 			echo"<a href='actions.php?action=supprimer&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Supprimer</a>";
 			echo "</br></br>";
 			info_exif($bdd,$photo_nom);

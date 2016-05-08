@@ -121,7 +121,7 @@
 					}
 					else
 					{
-						echo '<p> Mes photos: </p>';
+						echo '<p> Mes photos </p>';
 						mes_photos($bdd);
 					}
 		
