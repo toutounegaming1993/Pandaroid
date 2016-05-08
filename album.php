@@ -102,7 +102,7 @@ if (isset($_POST['valider']) AND $_POST['valider'] == 'Valider') {
 	<body>
 		<div id="fond">
 			<div id = "Contenu">
-				
+				Creer un album</br></br>
 				 <form id = "form" action="Album.php" method="post">
 							
 					<input type="text" name="Nom_album"  placeholder="Nom de l'album"><br><br>
@@ -110,7 +110,8 @@ if (isset($_POST['valider']) AND $_POST['valider'] == 'Valider') {
 					
 					<label class = "erreur" ><?php if (isset($erreur)) echo '<br />',$erreur;?></label>
 				</form>
-				 
+				</br></br>Nos albums</br></br>
+			<?php afficher_album($bdd);?>	 
 			</div>	
 	<script src="lightbox2-master/dist/js/lightbox-plus-jquery.min.js"></script>	
 	</body>	

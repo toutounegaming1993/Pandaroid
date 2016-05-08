@@ -68,7 +68,16 @@ function retourner_nom_amis($bdd,$amis){
 	}
 	return "$pre $n";
 }
-
+function afficher_album($bdd)
+{
+	$sql = "SELECT * FROM album ";
+	$resultat = $bdd->query($sql);
+	while($album=$resultat->fetch())
+	{	
+		$album_nom=$album['Nom'];
+		echo "<a href='album.php?album=$album_nom'>$album_nom</a>";
+	}
+}
 function req_amis($bdd){
 	$mon_id=$_SESSION['id'];
 	$sql = "SELECT * FROM req_amis ";

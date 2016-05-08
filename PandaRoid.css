@@ -142,7 +142,6 @@
 	margin: 10px 0 0 0;   
 	text-transform: uppercase;   
 	color: #ffffff;   
-	text-decoration: none;
 }
 
 .b_social:hover, .b_social:active {
@@ -169,10 +168,9 @@
 	height: 940px;
 	width: 60%;
 	margin-left: 20%;
-	margin-right: auto;
+	margin-right: 20%;
 	min-width: 1000px;
 	background-color: white;
-	font-family: Calibri Light;
 }
 
 #uploadform{
@@ -180,7 +178,6 @@
 	background: #AFDBE2;
 	height: 300px;
 	width: 20%;
-	min-width: 300px;
 	border-style: solid;
 	border-color: #63B6AF;
 	border-width: 2px;
@@ -196,7 +193,6 @@
 	background: #AFDBE2;
 	height: 320px;
 	width: 20%;
-	min-width: 300px;
 	border-style: solid;
 	border-color: #63B6AF;
 	border-width: 2px;
@@ -262,13 +258,16 @@
 	max-height:100px;
 	max-width:200px;
 }
+#form_image{
+height: auto;
+width: 60%;
 
-#form{
-	color: black;
-	padding-top: 20px;
-	padding-left:10%;
+table-layout:fixed;
+
 }
-
+#form_image td {
+word-wrap:break-word;
+}
 #footer {
 	display: block;
 	height: 150px;
