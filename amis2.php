@@ -22,7 +22,7 @@
 			$prenom = strtoupper($_SESSION['prenom']);
 			echo $prenom; 
 			?></a></li>
-			<li id="links"><a href="amis2">PARTAGER UNE PHOTO</a></li>
+			<li id="links"><a href="amis2.php">PARTAGER UNE PHOTO</a></li>
 			<li id="links"><a href="diapo.php">ALBUMS</a></li>
 			<li id="links"><a href="amis.php">AMIS</a></li>
 			<?php 

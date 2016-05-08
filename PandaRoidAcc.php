@@ -26,11 +26,11 @@
 				Connexion
 				</p>
 				
-				<form id = "form" action="Connection.php" method="post">
+				<form id = "form" action="connexion.php" method="post">
 							
 					<input type="text" name="email"  placeholder="Addresse e-mail"><br><br>
 					<input type="password" name="mdp" placeholder="Mot de passe"><br><br>
-					<input class="b_accueil" type="submit" name= "valider" value="Se Connecter" >
+					<input class="b_accueil" type="submit" name= "valider" value="Se Connecter" ><br>
 					
 					<label class = "erreur" ><?php if (isset($erreur)) echo '<br />',$erreur;?></label>
 				</form>
