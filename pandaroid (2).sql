@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Dim 08 Mai 2016 à 15:30
+-- Généré le :  Dim 08 Mai 2016 à 17:22
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -104,9 +104,13 @@ CREATE TABLE `photos` (
 --
 
 INSERT INTO `photos` (`id`, `Nom`, `Titre`, `Lieu`, `Proprietaire`, `Date`, `publique`) VALUES
-(9, '160508051615.jpg', 'coucou', 'coucou', 1, '2016-05-08 05:16:15', '0'),
-(10, '160508051844.jpg', 'Borderlands', 'Paris', 1, '2016-05-08 05:18:44', '0'),
-(11, '160508051913.jpg', 'aaze', 'aa', 1, '2016-05-08 05:19:13', '0');
+(9, '160508051615.jpg', 'coucou', 'coucou', 1, '2016-05-08 05:16:15', '1'),
+(10, '160508051844.jpg', 'Borderlands', 'Paris', 1, '2016-05-08 05:18:44', '1'),
+(11, '160508051913.jpg', 'aaze', 'aa', 1, '2016-05-08 05:19:13', '1'),
+(13, '160508053655.jpg', 'we go', 'one piece', 1, '2016-05-08 05:36:55', '1'),
+(14, '160508054008.jpg', 'dez', 'zfe', 1, '2016-05-08 05:40:08', '1'),
+(15, '160508054443.jpg', 'zda', 'qsdqdze', 1, '2016-05-08 05:44:43', '1'),
+(16, '160508061131.JPG', 'aze', 'aa', 1, '2016-05-08 06:11:31', '1');
 
 -- --------------------------------------------------------
 
@@ -193,7 +197,7 @@ ALTER TABLE `membre`
 -- AUTO_INCREMENT pour la table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT pour la table `req_amis`
 --
