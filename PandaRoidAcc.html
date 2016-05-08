@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="PandaRoidAcc.css" />
+		<script type="text/javascript" src="PandaRoidAcc.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<link rel="shortcut icon" href="tetedepanda.ico"/>
+		<!-- ADAPTER LA TAILLE A TOUS LES ECRANS !-->
+		<meta name="viewport" content="width=device-width" />
+		<meta charset="utf-8" />
+		<title>Connexion</title>
+	</head>
+	
+	<body onLoad="loading()">
+		<div id="contenu">
+			<div id="image">
+				<img src="Image/PandaLogo.jpg" alt="logo PandaRoid"/>
+			</div>
+			
+			
+			
+			<div id ="Tableauform">
+					<!-- Bloc du formuliare nécessaire pour l'identification -->
+				<img src="Image/PandaRoid.jpg" alt="PandaRoid" />	
+				
+				<p>
+				Connexion
+				</p>
+				
+				<form id = "form" action="Connection.php" method="post">
+					<input type="text" name="identifiant"  placeholder="Identifiant"><br><br>
+					<input type="password" name="mdp" placeholder="Mot de passe"><br><br>
+					<input id="connexion" type="submit" value="Se Connecter" >	
+				</form>
+				
+				<p>
+				Inscription
+				</p>
+				
+				<form id = "form" method="post">
+				
+				<input id="inscription" type="button" value="S'inscrire" onClick="popup()">
+				</form>
+			</div>
+			
+			<div id="popup">
+				<img id="sortir" src="Image/croix.png" alt="fermer" onClick="annuler()"/>
+				<div id="popuptitre">
+				Inscription
+				</div>
+				
+				<p>
+				Veuillez renseignez vos informations
+				</p>
+				
+				<form id = "popupup" action="ajout_membre.php" method="post">
+					
+					<input type="text" name="nom" placeholder="Nom"><br><br>
+					<input type="text" name="prenom" placeholder="Prenom"><br><br>						
+					<input type="text" name="email"  placeholder="Adresse e-mail"><br><br>
+					<input type="password" name="mdp" placeholder="Mot de passe"><br><br>
+					<input type="password" name="mdp2" placeholder="Confirmer mot de passe"><br><br>
+					<input id="submit" type="submit" name= "valider" value="Valider" >
+					
+				</form>
+			</div>
+		</div>
+	</body>
+	
+	<footer>
+		<div id="footer">
+		LA FAMILLE MON GARS OUI OUI LA FAMILLE
+		</div>
+	</footer>
+</html>

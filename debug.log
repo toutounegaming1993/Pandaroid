@@ -1,0 +1,75 @@
+[0417/031913:ERROR:process_info.cc(330)] VirtualQueryEx: Accès refusé. (0x5)
+[0417/031913:ERROR:process_info.cc(547)] ReadMemoryInfo failed
+[0417/031913:ERROR:process_info.cc(608)] range at 0x77cfab40, size 0x24 fully unreadable
+[0417/031913:ERROR:process_info.cc(608)] range at 0x77bfbc84, size 0x12 fully unreadable
+[0417/031913:ERROR:process_info.cc(608)] range at 0x77bfbc84, size 0x12 fully unreadable
+[0417/031913:ERROR:process_info.cc(608)] range at 0x77bfbc84, size 0x12 fully unreadable
+[0417/031913:ERROR:process_info.cc(608)] range at 0x77cf84b8, size 0x18 fully unreadable
+[0417/031913:ERROR:process_info.cc(608)] range at 0x77cf883c, size 0x20 fully unreadable
+[0417/031913:ERROR:process_reader_win.cc(141)] SuspendThread: Accès refusé. (0x5)
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x72670000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\system32\apphelp.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x72ee0000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\49.0.2623.112\chrome_elf.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73f40000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\WINMMBASE.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73f80000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\WINMM.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74180000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\USERENV.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74250000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\WTSAPI32.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x752909b4 of 36 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(154)] could not read debug directory from C:\Windows\SYSTEM32\shlwapi.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75100000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\kernel.appcore.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x756b4f4c of 37 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(154)] could not read debug directory from C:\Windows\SYSTEM32\powrprof.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74a90000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\windows.storage.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75ec0000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\SHELL32.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75eb0000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\PSAPI.DLL
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74870000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\bcrypt.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74890000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\WINSPOOL.DRV
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x72ca0000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.10586.0_none_d3c2e4e965da4528\COMCTL32.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x754f0000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\FirewallAPI.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73f10000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\fwbase.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x77bd0000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\NETAPI32.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73f70000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\DAVHLPR.DLL
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75b90000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\COMDLG32.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x779c0000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\ole32.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x752d0000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\OLEAUT32.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x746f0000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\IPHLPAPI.DLL
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75550000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\WS2_32.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73e30000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\USP10.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74fe0000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\MSASN1.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75d30000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\CRYPT32.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x772e0000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\WINTRUST.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73bc0000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\Secur32.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x6b010000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\49.0.2623.112\chrome_child.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x72190000 of 64 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Windows\SYSTEM32\dwrite.dll
+[0417/031913:ERROR:process_reader_win.cc(232)] ReadMemory at 0x2fc154 of 12 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0417/031913:WARNING:process_snapshot_win.cc(89)] ReadMemory ExceptionInformation failed
+[0417/031913:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
+[0417/031913:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess, ntstatus=-1073741558

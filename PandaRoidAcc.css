@@ -1,0 +1,187 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#contenu {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	width: 800px;
+	height: 500px;
+	background: white;
+}
+
+#image {
+	
+	float: left;
+	background-color: white;
+	height: 500px;
+	
+}
+
+#image img{
+	height: 500px;
+}
+
+#Tableauform img {
+	margin-top: 10px;
+	width: 310px;
+	height: auto;
+	padding-left: 10px;
+}
+
+#Tableauform {
+	
+	background-color: white;
+	height: 500px;
+	width: 310px;
+	margin-left: 400px;
+
+}
+
+#Tableauform p {
+	background-color: white;
+	font-family: Raleway, sans-serif;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	border-bottom: solid;
+	border-width: 1px;
+	border-color: grey;
+	padding-bottom: 10px;
+}
+#form{
+	padding-left: 70px;
+	padding-bottom: 20px;
+	background-color: white;
+}
+
+#connexion{
+	background-color: #AFDBE2;   
+	border-style: solid;  
+	border-width: 1px;   
+	border-color: #AFDBE2;   
+	padding: 5px 10px 5px 10px;   
+	width: 170px;   
+	box-sizing: border-box;   
+	font-family: PT sans;   
+	font-size: 13px;   
+	font-weight: normal;   
+	letter-spacing: 2px;   
+	margin: 10px 0 0 0;   
+	text-transform: uppercase;   
+	color: #ffffff;   
+}
+
+#connexion:hover{
+	background-color: #63B6AF;
+}
+
+#inscription {
+	background-color: #AFDBE2;   
+	border-style: solid;  
+	border-width: 1px;   
+	border-color: #AFDBE2;   
+	padding: 5px 10px 5px 10px;   
+	width: 170px;   
+	box-sizing: border-box;   
+	font-family: PT sans;   
+	font-size: 13px;   
+	font-weight: normal;   
+	letter-spacing: 2px;   
+	margin: 10px 0 0 0;   
+	text-transform: uppercase;   
+	color: #ffffff;   
+}
+
+#inscription:hover{
+	background-color: #63B6AF;
+}
+
+#popup{
+	background-color: #AFDBE2;
+	margin-left: 370px;
+	height: 500px;
+	width: 360px;
+	margin-top: -500px;
+	
+}
+
+.hidden{
+	visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
+#footer{
+	height: 200px;
+	margin-top: 200px;
+	padding-top: 30px;
+	text-align: center;
+	font-family: Calibri;
+	background-color: #AFDBE2;
+
+}
+
+#popuptitre{
+	margin-left: auto;
+	margin-right: auto;
+	width: 180px;
+	font-family: Raleway, sans-serif;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 30px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: white;
+}
+
+#popup p{
+	margin-top: 20px;
+	text-align: center;
+	font-family: Raleway, sans-serif;
+	
+}
+
+#popupup{
+	text-align: center;
+	margin-top: 40px;
+}
+
+#submit{
+	background-color: RGB(85, 180, 193);   
+	border-style: solid;  
+	border-width: 1px;   
+	border-color: #AFDBE2;   
+	padding: 5px 10px 5px 10px;   
+	width: 170px;   
+	box-sizing: border-box;   
+	font-family: PT sans;   
+	font-size: 13px;   
+	font-weight: normal;   
+	letter-spacing: 2px;   
+	margin: 10px 0 0 0;   
+	text-transform: uppercase;   
+	color: black; 
+}
+
+#submit:hover{
+	background-color: white;
+	border-color: RGB(85, 180, 193);
+}
+
+#sortir{
+	float: right;
+	height: 15px;
+	padding-top: 5px;
+	padding-right: 5px;
+}
+
+#sortir:hover{
+	height: 20px;
+}
