@@ -72,7 +72,7 @@
 				</form>
 			
 				<table>
-				<tr>
+				
 				
 				<?php
 				

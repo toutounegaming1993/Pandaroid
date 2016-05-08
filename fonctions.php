@@ -102,15 +102,24 @@ function diapo($bdd){
 	$sql .= " OR Proprietaire IN ($amigass) ";
 	$sql .= " ORDER BY Date DESC LIMIT 10 ";
 	$resultat = $bdd->query($sql);
-
+		$x=0;
 		while($diap=$resultat->fetch())
 			{	
 				
 				$nom=retourner_nom_amis($bdd,$diap['Proprietaire']);
 				$nom=strtoupper($nom);
-					if($diap['publique']==1)
-						echo '<td><a class="image_lien" data-lightbox="diapo"  data-title="'.$nom.' | '.$diap['Titre'].' | '.$diap['Lieu'].' | '.$diap['Date'].'" href="Images/'.$diap['Proprietaire'].'/'.$diap['Nom'].'"><span class="nom_proprietaire">'.$nom.'</span><img class="image_diapo" src="min/'.$diap['Proprietaire'].'/'.'mini'.'_'.''.$diap['Nom'].'"></a></td>';
-				
+				if($diap['publique']==1)
+				{
+					if($x==0){      
+						echo "<tr>";
+
+					}elseif($x%5==0){
+					echo"</tr><tr>";
+					}
+					echo '<td><a class="image_lien" data-lightbox="diapo"  data-title="'.$nom.' | '.$diap['Titre'].' | '.$diap['Lieu'].' | '.$diap['Date'].'" href="Images/'.$diap['Proprietaire'].'/'.$diap['Nom'].'"><span class="nom_proprietaire">'.$nom.'</span><img class="image_diapo" src="min/'.$diap['Proprietaire'].'/'.'mini'.'_'.''.$diap['Nom'].'"></a></td>';
+					$x++; 
+				}
+						
 			}
 				
 }
@@ -122,10 +131,16 @@ function mes_photos($bdd){
 	$sql .= " ORDER BY Date DESC ";
 	$resultat = $bdd->query($sql);
 	echo'<table>';
-	echo'<tr>';
+		$x=0;
 		while($diap=$resultat->fetch()){
 			$nom=retourner_nom_amis($bdd,$diap['Proprietaire']);
 			$photo_nom=$diap['Nom'];
+			if($x==0){      
+				echo "<tr>";
+
+			}elseif($x%5==0){
+					echo"</tr><tr>";
+			}
 			echo '<td><a class="image_lien" data-lightbox="diapo"  data-title="'.$nom.' | '.$diap['Titre'].' | '.$diap['Lieu'].' | '.$diap['Date'].'" href="Images/'.$diap['Proprietaire'].'/'.$diap['Nom'].'"><span class="nom_proprietaire">'.$nom.'</span><img class="image_diapo" src="min/'.$diap['Proprietaire'].'/'.'mini'.'_'.''.$diap['Nom'].'"></a>';
 			echo "</br>";
 			echo'<form id = "form_image" method="post">';
@@ -138,6 +153,7 @@ function mes_photos($bdd){
 			info_exif($bdd,$photo_nom);
 			echo'</form>'; 
 			echo '</td>';
+			$x++; 
 		}
 		echo'</tr>';
 		echo'</table>';
@@ -185,12 +201,7 @@ function info_exif($bdd,$img)
 	$modele=null;
 	$vit_obt=null;
 	$iso=null;
-	$heure=null;
-	$annee=null;
-	$mois=null;
-	$jour=null;
-	$heure=null;
-	$seconde=null;
+	$date=null;
 	$largeur=null;
 	$hauteur=null;
 	/* Je verifie si mon image est de type jpeg ou de type tiff*/
@@ -222,18 +233,10 @@ function info_exif($bdd,$img)
 							$vit_obt = $val;
 					if($name=='ISOSpeedRatings') // Valeur iso
 							$iso = $val;
-					if($name=='DateTimeOriginal'){
+					if(($name=='DateTimeOriginal') OR($name=='DateTime')){
+						
 						$date = $val; // Date de la prise de vue (heure de l'appareil)
-				 
-						// La date est d'un format spécial, on va donc la rendre lisible
-						$date2 = explode(":", current(explode(" ", $date)));
-						$heure = explode(":", end(explode(" ", $date))); // Utile dans le cas où vous souhaitez extraire l'heure
-						$annee = current($date2); // Je lis la valeur courante de date2
-						$mois = next($date2); 
-						$jour = next($date2); 
-						$heure= next($date2);
-						$minute= next($date2);
-						$seconde= next($date2);	
+						
 					}
 					if ($name=='Width'){
 						$largeur = $val;
@@ -241,11 +244,12 @@ function info_exif($bdd,$img)
 					}
 						
 					if ($name=='Height')
-						$hauteur = $val;
-										
+						$hauteur = $val;						
+				
 				}
 				
 			}
+		
 			if(($largeur) AND ($hauteur)){
 				$resolution =$largeur.'*'.$hauteur;
 				echo "<span style='font-weight: bold;'>Resolution :</span><br />";
@@ -260,15 +264,14 @@ function info_exif($bdd,$img)
 			if(($focale) OR  ($vit_obt) OR $iso)
 				echo	"<span style='font-weight: bold;'>Caractéristiques :</span><br />";
 			if($focale)		 
-				echo	"Focale : $focal<br />";
+				echo	"Focale : $focale<br />";
 			if($vit_obt)
 				echo	"Vitesse d'obturation : $vit_obt<br />";
 			if($iso)
 				echo	"Iso : $iso<br />";
-			if(($jour) AND ($mois) AND ($annee) )
-				echo	"Prise le : $jour/$mois/$annee<br />";
-			if(($heure) AND ($minute) AND ($seconde))
-				echo	"A : $heure:$minute:$seconde<br />";
+			if($date)
+				echo	"Prise le : $date";
+			
 
 
 		}

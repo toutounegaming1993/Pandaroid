@@ -168,7 +168,7 @@
 	height: 940px;
 	width: 60%;
 	margin-left: 20%;
-	margin-right: auto;
+	margin-right: 20%;
 	min-width: 1000px;
 	background-color: white;
 }
@@ -258,7 +258,16 @@
 	max-height:100px;
 	max-width:200px;
 }
+#form_image{
+height: auto;
+width: 60%;
 
+table-layout:fixed;
+
+}
+#form_image td {
+word-wrap:break-word;
+}
 #footer {
 	display: block;
 	height: 150px;
