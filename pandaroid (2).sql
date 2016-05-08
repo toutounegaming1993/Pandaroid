@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 03 Mai 2016 à 22:20
+-- Généré le :  Dim 08 Mai 2016 à 13:25
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -43,18 +43,9 @@ CREATE TABLE `album` (
 
 CREATE TABLE `amis` (
   `id` int(11) NOT NULL,
-  `utilisateur_id` int(11) NOT NULL,
-  `amis_id` int(11) NOT NULL,
-  `Status` enum('0','1','2') NOT NULL
+  `membre1_id` int(11) NOT NULL,
+  `membre2_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `amis`
---
-
-INSERT INTO `amis` (`id`, `utilisateur_id`, `amis_id`, `Status`) VALUES
-(1, 1, 1, '2'),
-(2, 2, 2, '2');
 
 -- --------------------------------------------------------
 
@@ -81,16 +72,16 @@ CREATE TABLE `membre` (
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `mdp` varchar(255) NOT NULL
+  `mdp` varchar(255) NOT NULL,
+  `admin` enum('0','1') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `membre`
 --
 
-INSERT INTO `membre` (`id`, `nom`, `prenom`, `email`, `mdp`) VALUES
-(1, 'Duhesme', 'Antoine', 'duhesme.antoine@gmail.com', '29121993'),
-(2, 'Duhesme', 'Laure', 'laure.duhesme@gmail.com', '080887');
+INSERT INTO `membre` (`id`, `nom`, `prenom`, `email`, `mdp`, `admin`) VALUES
+(1, 'Duhesme', 'Antoine', 'duhesme.antoine@gmail.com', '6634ce5b34f4123955fbcdc56813b0b05221b785', '1');
 
 -- --------------------------------------------------------
 
@@ -101,46 +92,33 @@ INSERT INTO `membre` (`id`, `nom`, `prenom`, `email`, `mdp`) VALUES
 CREATE TABLE `photos` (
   `id` int(11) NOT NULL,
   `Nom` varchar(255) NOT NULL,
+  `Titre` varchar(255) NOT NULL,
   `Lieu` varchar(255) NOT NULL,
   `Proprietaire` int(11) NOT NULL,
-  `Date` date NOT NULL
+  `Date` datetime NOT NULL,
+  `publique` enum('0','1') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `photos`
 --
 
-INSERT INTO `photos` (`id`, `Nom`, `Lieu`, `Proprietaire`, `Date`) VALUES
-(1, '160428060336.PNG', 'Paris', 1, '2016-04-28'),
-(2, '160428072940.PNG', 'Paris', 1, '2016-04-28'),
-(3, '160428081941.PNG', 'Paris', 1, '2016-04-28'),
-(4, '160428093655.PNG', 'Paris', 1, '2016-04-28'),
-(5, '160428100955.PNG', 'Ton cul', 2, '2016-04-28'),
-(6, '160428110408.PNG', 'Ton cul', 2, '2016-04-28'),
-(7, '160428110646.jpg', 'Civil War', 2, '2016-04-28'),
-(8, '160430034147.PNG', 'zr', 1, '2016-04-30'),
-(9, '160430034157.jpg', 'aze', 1, '2016-04-30'),
-(10, '160430034347.PNG', 'gj', 1, '2016-04-30'),
-(11, '160430034435.jpg', 'sf', 1, '2016-04-30'),
-(12, '160430034500.jpg', 'fh', 1, '2016-04-30'),
-(13, '160430035319.jpg', 'fh', 1, '2016-04-30'),
-(14, '160430035412.jpg', 'fh', 1, '2016-04-30'),
-(15, '160430035442.jpg', 'fh', 1, '2016-04-30'),
-(16, '160430035531.jpg', 'fh', 1, '2016-04-30'),
-(17, '160430035553.jpg', 'qd', 1, '2016-04-30'),
-(18, '160430040408.jpg', 'azaz', 1, '2016-04-30'),
-(19, '160430040449.jpg', 'azaz', 1, '2016-04-30'),
-(20, '160430040505.jpg', 'ed', 1, '2016-04-30'),
-(21, '160430040531.jpg', 'ed', 1, '2016-04-30'),
-(22, '160430040537.jpg', 'ae', 1, '2016-04-30'),
-(23, '160430040636.jpg', 'ae', 1, '2016-04-30'),
-(24, '160430041606.jpg', 'ae', 1, '2016-04-30'),
-(25, '160430041624.jpg', 'qdsqds', 1, '2016-04-30'),
-(26, '160430041647.jpg', 'qdqd', 1, '2016-04-30'),
-(27, '160430041842.jpg', 'qdqd', 1, '2016-04-30'),
-(28, '160430041852.jpg', 'qdqd', 1, '2016-04-30'),
-(29, '160430041858.jpg', 'qs', 1, '2016-04-30'),
-(30, '160503070531.PNG', 'qd', 1, '2016-05-03');
+INSERT INTO `photos` (`id`, `Nom`, `Titre`, `Lieu`, `Proprietaire`, `Date`, `publique`) VALUES
+(4, '160508103348.jpg', 'lol', 'paris', 1, '2016-05-08 10:33:48', '0'),
+(6, '160508110734.jpg', 'aze', 'aze', 1, '2016-05-08 11:07:34', '0'),
+(7, '160508124618.jpg', 'Vision', 'Paris', 1, '2016-05-08 12:46:18', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `req_amis`
+--
+
+CREATE TABLE `req_amis` (
+  `id` int(11) NOT NULL,
+  `demandeur` int(11) NOT NULL,
+  `recepteur` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Index pour les tables exportées
@@ -156,7 +134,9 @@ ALTER TABLE `album`
 -- Index pour la table `amis`
 --
 ALTER TABLE `amis`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `membre1_id` (`membre1_id`,`membre2_id`),
+  ADD KEY `membre2_id` (`membre2_id`);
 
 --
 -- Index pour la table `groupe`
@@ -174,7 +154,16 @@ ALTER TABLE `membre`
 -- Index pour la table `photos`
 --
 ALTER TABLE `photos`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `Proprietaire` (`Proprietaire`);
+
+--
+-- Index pour la table `req_amis`
+--
+ALTER TABLE `req_amis`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `demandeur` (`demandeur`,`recepteur`),
+  ADD KEY `recepteur` (`recepteur`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
@@ -189,7 +178,7 @@ ALTER TABLE `album`
 -- AUTO_INCREMENT pour la table `amis`
 --
 ALTER TABLE `amis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `groupe`
 --
@@ -199,12 +188,41 @@ ALTER TABLE `groupe`
 -- AUTO_INCREMENT pour la table `membre`
 --
 ALTER TABLE `membre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT pour la table `req_amis`
+--
+ALTER TABLE `req_amis`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Contraintes pour les tables exportées
+--
+
+--
+-- Contraintes pour la table `amis`
+--
+ALTER TABLE `amis`
+  ADD CONSTRAINT `amis_ibfk_1` FOREIGN KEY (`membre1_id`) REFERENCES `membre` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `amis_ibfk_2` FOREIGN KEY (`membre2_id`) REFERENCES `membre` (`id`) ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `photos`
+--
+ALTER TABLE `photos`
+  ADD CONSTRAINT `photos_ibfk_1` FOREIGN KEY (`Proprietaire`) REFERENCES `membre` (`id`) ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `req_amis`
+--
+ALTER TABLE `req_amis`
+  ADD CONSTRAINT `req_amis_ibfk_1` FOREIGN KEY (`demandeur`) REFERENCES `membre` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `req_amis_ibfk_2` FOREIGN KEY (`recepteur`) REFERENCES `membre` (`id`) ON DELETE CASCADE;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
