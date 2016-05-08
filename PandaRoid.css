@@ -46,10 +46,10 @@
 .nom_proprietaire {
     position: absolute;
     top: 0;
-    color:white;
-	font-family: Calibri light;
-	font-size: 15px;
-    background-color:rgba(141,206,223,0.8);
+    color:#f00;
+	font-family: Raleway, sans-serif;
+	font-weight:bold;
+    background-color:rgba(255,255,255,0.8);
 	width: 200px;
     height: 200px;
     line-height:200px;
@@ -131,111 +131,23 @@
     background-color: #AFDBE2;   
 	border-style: solid;  
 	border-width: 1px;   
-	border-color: #63B6AF;   
-	padding: 5px 10px 5px 10px;  
-	width: 100px;   
+	border-color: #AFDBE2;   
+	padding: 5px 10px 5px 10px;   
+	width: 170px;   
+	box-sizing: border-box;   
 	font-family: PT sans;   
 	font-size: 13px;   
 	font-weight: normal;   
-	display: inline-block;
+	letter-spacing: 2px;   
+	margin: 10px 0 0 0;   
 	text-transform: uppercase;   
-	color: #ffffff; 
-	text-decoration: none;
-	margin-bottom: 5px;
-	margin-right: 5px;
+	color: #ffffff;   
 }
 
 .b_social:hover, .b_social:active {
     background-color: #63B6AF;
 }
 
-.b_admin{
-	background-color: #AFDBE2;   
-	border-style: solid;  
-	border-width: 1px;   
-	border-color: #63B6AF;   
-	padding: 5px 10px 5px 10px;  
-	width: 175px;   
-	font-family: PT sans;   
-	font-size: 13px;   
-	font-weight: normal;   
-	display: inline-block;
-	text-transform: uppercase;   
-	color: #ffffff; 
-	text-decoration: none;
-	margin-bottom: 5px;
-	margin-right: 5px;
-}
-
-.b_admin:hover, .b_admin:active {
-    background-color: #63B6AF;
-}
-
-.b_amis{
-	background-color: #AFDBE2;   
-	border-style: solid;  
-	border-width: 1px;   
-	border-color: #63B6AF;   
-	padding: 5px 10px 5px 10px;  
-	width: 150px;   
-	font-family: PT sans;   
-	font-size: 13px;   
-	font-weight: normal;   
-	display: inline-block;
-	text-transform: uppercase;   
-	color: #ffffff; 
-	text-decoration: none;
-	margin-bottom: 5px;
-	margin-right: 5px;
-}
-
-.b_amis:hover, .b_amis:active {
-    background-color: #63B6AF;
-}
-
-.b_amis{
-	background-color: #AFDBE2;   
-	border-style: solid;  
-	border-width: 1px;   
-	border-color: #63B6AF;   
-	padding: 5px 10px 5px 10px;  
-	width: 150px;   
-	font-family: PT sans;   
-	font-size: 13px;   
-	font-weight: normal;   
-	display: inline-block;
-	text-transform: uppercase;   
-	color: #ffffff; 
-	text-decoration: none;
-	margin-bottom: 5px;
-	margin-right: 5px;
-}
-
-.b_amis:hover, .b_amis:active {
-    background-color: #63B6AF;
-}
-
-.b_divorce{
-	background-color: #AFDBE2;   
-	border-style: solid;  
-	border-width: 1px;   
-	border-color: #63B6AF;   
-	padding: 5px 10px 5px 10px;  
-	width: 300px;   
-	font-family: PT sans;   
-	font-size: 13px;   
-	font-weight: normal;   
-	display: inline-block;
-	text-transform: uppercase;   
-	color: #ffffff; 
-	text-decoration: none;
-	margin-bottom: 5px;
-	margin-right: 5px;
-}
-
-.b_divorce:hover, .b_divorce:active {
-    background-color: #63B6AF;
-}
 
 #banniere img {
 	margin-top: 90px;
@@ -248,41 +160,31 @@
 	
 }
 #fond {
-	height: 1400px;
+	height: 1000px;
 	background-color: #F5F5F2;
 }
 
 #contenu {
-	height: 1220px;
+	height: 940px;
 	width: 60%;
 	margin-left: 20%;
 	margin-right: 20%;
 	min-width: 1000px;
 	background-color: white;
-	border-top: solid;
-	border-top-width: 4px;
-	border-top-color: #F5F5F2;
-	padding-top: 100px;
-	padding-left:100px;
-	font-family: Calibri light;
-	font-size: 20px;
-	border-bottom: solid;
-	border-top-width: 4px;
-	border-bottom-color: #F5F5F2;
 }
 
 #uploadform{
 	position: fixed;
 	background: #AFDBE2;
-	height: 320px;
-	width: 400px;
+	height: 300px;
+	width: 20%;
 	border-style: solid;
 	border-color: #63B6AF;
 	border-width: 2px;
 	text-align: center;
-	margin-left: 300px;
+	margin-left: 20%;
 	padding-top: 30px;
-	margin-top: -200px;
+	margin-top: -100px;
 	z-index: 1000;
 }
 
@@ -290,15 +192,14 @@
 	position: fixed;
 	background: #AFDBE2;
 	height: 320px;
-	width: 400px;
+	width: 20%;
 	border-style: solid;
 	border-color: #63B6AF;
 	border-width: 2px;
 	text-align: center;
-	margin-left: 750px;
+	margin-left: 40%;
 	padding-top: 30px;
-	margin-top: -200px;
-	z-index: 1000;
+	margin-top: -100px;
 	
 }
 
@@ -360,14 +261,13 @@
 #form_image{
 height: auto;
 width: 60%;
-padding-left: 45px;
+
 table-layout:fixed;
 
 }
 #form_image td {
 word-wrap:break-word;
 }
-
 #footer {
 	display: block;
 	height: 150px;

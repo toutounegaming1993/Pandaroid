@@ -32,7 +32,6 @@ if (isset($_POST['valider']) AND $_POST['valider'] == 'Valider') {
 				$sql = "INSERT INTO album (Nom, Date, Proprietaire) VALUES(";
 				$sql .= "'$nom_album','$date','$mon_id')";
 				$bdd->query($sql);
-				mkdir("album/$mon_id/$nom_album", 0777, true);
 			}
 		catch(Exception $e) {
 				echo $e->getMessage();
@@ -110,8 +109,25 @@ if (isset($_POST['valider']) AND $_POST['valider'] == 'Valider') {
 					
 					<label class = "erreur" ><?php if (isset($erreur)) echo '<br />',$erreur;?></label>
 				</form>
-				</br></br>Nos albums</br></br>
-			<?php afficher_album($bdd);?>	 
+				
+			<?php 
+			if(isset($_GET['album']) AND !empty($_GET['album']))
+				$album=$_GET['album'];
+			else{
+				$album=null;	
+				}
+			if($album!=null){
+				echo	'</br></br>';
+				afficher_contenu_album($album,$bdd);
+			}
+			else{
+			echo	'</br></br>Nos albums</br></br>';
+				afficher_album($bdd);
+			}
+			
+			
+			
+			?>	 
 			</div>	
 	<script src="lightbox2-master/dist/js/lightbox-plus-jquery.min.js"></script>	
 	</body>	

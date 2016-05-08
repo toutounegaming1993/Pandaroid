@@ -94,14 +94,13 @@
 					$mon_id=$_SESSION['id'];
 					if($membre!=$mon_id){
 						if($admin=='1'){
-						echo "Membre: $nom $prenom <br><br>";
 						echo "<a href='actions.php?action=supprimermbr&membre=$membre' class='b_social'> Supprimer</a> |  " ;
-						echo "<a href='actions.php?action=admin&membre=$membre' class='b_admin'> Rendre administrateur</a> |  " ;
+						echo "<a href='actions.php?action=admin&membre=$membre' class='b_social'> Rendre administrateur</a> |  " ;
 						}
 						$res = $bdd->query("SELECT * FROM amis WHERE (membre1_id='$mon_id' AND membre2_id='$membre') OR(membre1_id='$membre' AND membre2_id='$mon_id')");
 						$rows=$res->rowCount();
 						if($rows==1){
-							echo "<a href='#' class='b_amis'> Vous êtes déjà amis</a> | <a href='actions.php?action=enlever&membre=$membre' class='b_divorce'> Retirer $prenom $nom de ma liste d'amis</a><br><br> " ;
+							echo "<a href='#' class='b_social'> Vous êtes déjà amis</a> | <a href='actions.php?action=enlever&membre=$membre' class='b_social'> Retirer $prenom $nom de ma liste d'amis</a> " ;
 							photo_amis($bdd,$membre);
 						}
 							
@@ -109,7 +108,7 @@
 							$res_dem = $bdd->query("SELECT * FROM req_amis WHERE demandeur='$membre' AND recepteur='$mon_id'");
 							$res_rec = $bdd->query("SELECT * FROM req_amis WHERE demandeur='$mon_id' AND recepteur='$membre'");
 							if($res_dem->rowCount()==1){
-								echo "<a href='actions.php?action=accepter&membre=$membre' class='b_social'> Accepter</a> | <a href='#' class='b_social'> Ignorer</a>";
+								echo "<a href='actions.php?action=accepter&membre=$membre' class='b_social'> Accepter</a> | <a href='#' class='bouton'> Ignorer</a>";
 							}
 							else if($res_rec->rowCount()==1){
 								echo "<a href='actions.php?action=annuler&membre=$membre' class='b_social'> Annuler la demande</a> ";
@@ -122,7 +121,7 @@
 					}
 					else
 					{
-						echo '<p> Mes photos </p>';
+						echo '<p> Mes photos: </p>';
 						mes_photos($bdd);
 					}
 		

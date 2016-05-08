@@ -11,7 +11,7 @@ function non_amis($bdd){
 		$membre_id=$non_amis['id'];
 		$nom=$non_amis['nom'];
 		$prenom=$non_amis['prenom'];
-		echo "<a href='profil.php?membre=$membre_id' class='b_social' data-toggle='tooltip' title='Accéder au profil' >$prenom $nom</a>";
+		echo "<a href='profil.php?membre=$membre_id' class='b_social'>$prenom $nom</a>";
 	}
 				
 }
@@ -26,7 +26,7 @@ function liste_membre_admin($bdd)
 		$membre_id=$membre['id'];
 		$nom=$membre['nom'];
 		$prenom=$membre['prenom'];
-		echo "<a href='profil.php?membre=$membre_id&admin=$admin' class='b_social' data-toggle='tooltip' title='Accéder au profil'>$prenom $nom</a>";
+		echo "<a href='profil.php?membre=$membre_id&admin=$admin' class='b_social'>$prenom $nom</a>";
 		
 	}
 }
@@ -54,7 +54,7 @@ function amis($bdd){
 			$pre=$nom['prenom'];
 			
 		}
-		echo "<a href='profil.php?membre=$membre' class='b_social' data-toggle='tooltip' title='Accéder au profil'>$pre $n</a>";
+		echo "<a href='profil.php?membre=$membre'>$pre $n</a>";
 	}
 }
 function retourner_nom_amis($bdd,$amis){
@@ -75,8 +75,43 @@ function afficher_album($bdd)
 	while($album=$resultat->fetch())
 	{	
 		$album_nom=$album['Nom'];
-		echo "<a href='album.php?album=$album_nom'>$album_nom</a>";
+		$album_id=$album['id'];
+		
+		echo "<a href='album.php?album=$album_id'>$album_nom</a>";
 	}
+}
+function afficher_contenu_album($album,$bdd){
+	$mon_id=$_SESSION['id'];
+	$sql = "SELECT * FROM photo_album ";
+	$sql .="WHERE album_id ='$album'";
+	$resultat = $bdd->query($sql);
+	$x=0;
+	
+	while($alb=$resultat->fetch())
+	{
+		$photo=$alb['photo_id'];
+		$photo_req = "SELECT * FROM photos ";
+		$photo_req .="WHERE id LIKE '$photo' ";
+		$resu = $bdd->query($photo_req);
+		if($x==0){  
+			echo "<tr>";
+		}elseif($x%5==0){
+			echo"</tr><tr>";
+		}
+		while($nomm=$resu->fetch())
+		{
+			
+		$nom=retourner_nom_amis($bdd,$nomm['Proprietaire']);
+		$nom=strtoupper($nom);
+			$nom_photo=$nomm['Nom'];
+			echo '<td><a class="image_lien" data-lightbox="diapo"  data-title="'.$nom.' | '.$nomm['Titre'].' | '.$nomm['Lieu'].' | '.$nomm['Date'].'" href="Images/'.$nomm['Proprietaire'].'/'.$nomm['Nom'].'"><span class="nom_proprietaire">'.$nom.'</span><img class="image_diapo" src="min/'.$nomm['Proprietaire'].'/'.'mini'.'_'.''.$nomm['Nom'].'"></a></td>';
+
+			 	
+		}
+		
+		$x++;
+	}
+
 }
 function req_amis($bdd){
 	$mon_id=$_SESSION['id'];
@@ -96,7 +131,7 @@ function req_amis($bdd){
 				$pren=$nom['prenom'];
 				
 			}
-			echo "<a href='profil.php?membre=$membre' class='b_social' data-toggle='tooltip' title='Accéder au profil'>$pren $no</a>";
+			echo "<a href='profil.php?membre=$membre'>$pren $no</a>";
 	}
 }
 function diapo($bdd){
@@ -144,6 +179,7 @@ function mes_photos($bdd){
 		while($diap=$resultat->fetch()){
 			$nom=retourner_nom_amis($bdd,$diap['Proprietaire']);
 			$photo_nom=$diap['Nom'];
+			$photo_id=$diap['id'];
 			if($x==0){      
 				echo "<tr>";
 
@@ -154,18 +190,49 @@ function mes_photos($bdd){
 			echo "</br>";
 			echo'<form id = "form_image" method="post">';
 			if($diap['publique']==0)
-				echo"<a href='actions.php?action=publier&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Publier</a><br>";
+				echo"<a href='actions.php?action=publier&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Publier</a>";
 			else
-				echo"<a href='actions.php?action=priver&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Rendre Privé</a><br>";
-			echo"<a href='actions.php?action=supprimer&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Supprimer</a>";
+				echo"<a href='actions.php?action=priver&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Rendre Privé</a>";
+			echo"<a href='actions.php?action=supprimer&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Supprimer</a>";	
+			
 			echo "</br></br>";
+			echo "<select id ='album' name='album'>";
+			echo '<option value=0">Aucun Album</option>';
+			get_album($bdd);
+			echo "</select>";
+			echo'<input id="submit" type="submit" name= "valider2" value="Valider"></br>';
+			
 			info_exif($bdd,$photo_nom);
 			echo'</form>'; 
 			echo '</td>';
 			$x++; 
+			if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider'){
+			// on teste l'existence de nos variables. On teste également si elles ne sont pas vides
+			if ((isset($_POST['album']) AND !empty($_POST['album']) AND($_POST['album']!=0) ))
+			{
+				$album=$_POST['album'];
+				$sql = "INSERT INTO photo_album (album_id, photo_id) VALUES(";
+				$sql .= "'$album','$photo_id')";
+				$bdd->query($sql);
+			}
+		}
 		}
 		echo'</tr>';
 		echo'</table>';
+	
+}
+
+function get_album($bdd){
+	$mon_id=$_SESSION['id'];
+	$sql = "SELECT * FROM album ";
+	$sql .= "WHERE Proprietaire LIKE '$mon_id' ";
+	$resultat = $bdd->query($sql);
+	while($diap=$resultat->fetch()){
+		$a_nom=$diap['Nom'];
+		echo '<option value='.$diap['id'].'>'.$diap['Nom'].'</option>';
+	}
+
+	
 }
 function photo_amis($bdd,$id_amis){
 	$sql = "SELECT * FROM photos ";
