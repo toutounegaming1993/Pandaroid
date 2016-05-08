@@ -8,7 +8,7 @@
 		<script type='text/javascript' src='//code.jquery.com/jquery-1.9.1.js'></script>
 		
 		<?php include_once('fonctions.php');?>
-		<script type="text/javascript" src="PandaRoid.js"></script>
+<script type="text/javascript" src="PandaRoid.js"></script>
 		<meta name="viewport" content="width=device-width" />
         <meta charset="utf-8" />
         <title>PandaRoid</title>
@@ -53,7 +53,7 @@
 		<div id="fond">
 			<div id="contenu">
 			
-			<form id = "uploadform"  action="upload_photo.php" method="post" enctype="multipart/form-data" runat="server" >
+			<form id = "uploadform" action="upload_photo.php" method="post" enctype="multipart/form-data" runat="server" >
 					<img id="sortir" src="Image/croix.png" alt="fermer" onClick="annuler3()"/>
 					<div id="ajout">
 					Ajouter votre photo
@@ -69,15 +69,15 @@
 			</form>
 			
 			<form id = "form" action="amis.php" method="post" enctype="multipart/form-data" runat="server" >
-				Les membres du site:<br>
+				Les membres du site<br><br>
 				<?php
 					non_amis($bdd);
 				?>
-				<br><br>Les membres du site qui sont vos amis:
+				<br><br><br><br>Vos amis<br><br>
 				<?php
 					amis($bdd);
 				?>
-				<br><br>Vos demandes d'amis:
+				<br><br><br><br>Vos demandes d'amis<br><br>
 				<?php
 				req_amis($bdd)
 				?>

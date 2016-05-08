@@ -1,4 +1,4 @@
-<?php
+<?php
 
 $email_ins = isset($_POST["email_ins"]) ? $_POST["email_ins"]:"";
 $mdp_ins = isset($_POST["mdp_ins"]) ? $_POST["mdp_ins"]:"";
@@ -142,7 +142,7 @@ if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider') {
 				
 				<table>
 				<tr>
-				Les Membres du sites:</br></br>
+				Les Membres du sites</br></br>
 				<?php
 				
 					liste_membre_admin($bdd);
@@ -150,7 +150,7 @@ if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider') {
 				</tr>
 				</table>
 				</br>Autres options</br></br>
-				Ajouter un Membre à PandaRoid:
+				Ajouter un Membre à PandaRoid
 				<form id = "form_admin" action="admin.php" method="post">
 					
 					<input type="text" name="nom" placeholder="Nom"><br><br>

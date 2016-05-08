@@ -46,10 +46,10 @@
 .nom_proprietaire {
     position: absolute;
     top: 0;
-    color:#63B6AF;
+    color:white;
 	font-family: Calibri light;
-	font-weight:bold;
-    background-color:rgba(255,255,255,0.8);
+	font-size: 15px;
+    background-color:rgba(141,206,223,0.8);
 	width: 200px;
     height: 200px;
     line-height:200px;
@@ -142,12 +142,100 @@
 	color: #ffffff; 
 	text-decoration: none;
 	margin-bottom: 5px;
+	margin-right: 5px;
 }
 
 .b_social:hover, .b_social:active {
     background-color: #63B6AF;
 }
 
+.b_admin{
+	background-color: #AFDBE2;   
+	border-style: solid;  
+	border-width: 1px;   
+	border-color: #63B6AF;   
+	padding: 5px 10px 5px 10px;  
+	width: 175px;   
+	font-family: PT sans;   
+	font-size: 13px;   
+	font-weight: normal;   
+	display: inline-block;
+	text-transform: uppercase;   
+	color: #ffffff; 
+	text-decoration: none;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+.b_admin:hover, .b_admin:active {
+    background-color: #63B6AF;
+}
+
+.b_amis{
+	background-color: #AFDBE2;   
+	border-style: solid;  
+	border-width: 1px;   
+	border-color: #63B6AF;   
+	padding: 5px 10px 5px 10px;  
+	width: 150px;   
+	font-family: PT sans;   
+	font-size: 13px;   
+	font-weight: normal;   
+	display: inline-block;
+	text-transform: uppercase;   
+	color: #ffffff; 
+	text-decoration: none;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+.b_amis:hover, .b_amis:active {
+    background-color: #63B6AF;
+}
+
+.b_amis{
+	background-color: #AFDBE2;   
+	border-style: solid;  
+	border-width: 1px;   
+	border-color: #63B6AF;   
+	padding: 5px 10px 5px 10px;  
+	width: 150px;   
+	font-family: PT sans;   
+	font-size: 13px;   
+	font-weight: normal;   
+	display: inline-block;
+	text-transform: uppercase;   
+	color: #ffffff; 
+	text-decoration: none;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+.b_amis:hover, .b_amis:active {
+    background-color: #63B6AF;
+}
+
+.b_divorce{
+	background-color: #AFDBE2;   
+	border-style: solid;  
+	border-width: 1px;   
+	border-color: #63B6AF;   
+	padding: 5px 10px 5px 10px;  
+	width: 300px;   
+	font-family: PT sans;   
+	font-size: 13px;   
+	font-weight: normal;   
+	display: inline-block;
+	text-transform: uppercase;   
+	color: #ffffff; 
+	text-decoration: none;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+.b_divorce:hover, .b_divorce:active {
+    background-color: #63B6AF;
+}
 
 #banniere img {
 	margin-top: 90px;
@@ -160,12 +248,12 @@
 	
 }
 #fond {
-	height: 1000px;
+	height: 1400px;
 	background-color: #F5F5F2;
 }
 
 #contenu {
-	height: 880px;
+	height: 1220px;
 	width: 60%;
 	margin-left: 20%;
 	margin-right: 20%;
@@ -207,7 +295,7 @@
 	border-color: #63B6AF;
 	border-width: 2px;
 	text-align: center;
-	margin-left: 300px;
+	margin-left: 750px;
 	padding-top: 30px;
 	margin-top: -200px;
 	z-index: 1000;
