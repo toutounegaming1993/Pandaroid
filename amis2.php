@@ -92,7 +92,7 @@
 	
 	<footer>
 		<div id="footer">
-			MAI LAM + DUHESME COPYRIGHT MODAFUKA NERF DAT BITCH PLZZZ YOLO BBOY IN DA PLACE 
+			PandaRoid Copyright
 		</div>
 	</footer>
 	

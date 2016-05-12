@@ -41,6 +41,7 @@
     width:200px;
     display:block;
 	margin-left:10px;
+	margin-bottom: 5px;
 
 }
 .nom_proprietaire {
@@ -137,7 +138,7 @@
 	font-family: PT sans;   
 	font-size: 13px;   
 	font-weight: normal;     
-	margin: 10px 0 0 0;   
+	  
 	text-transform: uppercase;   
 	color: #ffffff;   
 	text-decoration: none;
@@ -148,6 +149,30 @@
 .b_social:hover, .b_social:active {
     background-color: #63B6AF;
 }
+
+#b_info {
+    background-color: #AFDBE2;   
+	border-style: solid;  
+	border-width: 1px;   
+	border-color: #AFDBE2;     
+	width: 110px;    
+	font-family: PT sans;   
+	font-size: 13px;   
+	font-weight: normal;     
+	text-transform: uppercase;   
+	color: #ffffff;   
+	text-decoration: none;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: 25px;
+
+}
+
+#b_info:hover, #b_info:active {
+    background-color: #63B6AF;
+}
+
 
 
 #banniere img {
@@ -165,27 +190,56 @@
 	background-color: #F5F5F2;
 }
 
+#fondprof {
+	height: 3060px;
+	background-color: #F5F5F2;
+	
+}
+
 #contenu {
 	height: 1340px;
 	width: 60%;
-	margin-left: 20%;
-	margin-right: 20%;
+	margin-left: 10%;
+	margin-right: 10%;
 	min-width: 1000px;
 	background-color: white;
 	font-family: Raleway, sans-serif;
 	padding-top: 20px;
-	padding-left: 20px;
+	padding-left: 10%;
+	padding-right:10%;
 	border-top:solid;
 	border-top-color: #F5F5F2;
 	border-top-width: 4px;
 	
 }
 
+
+
+
+#contenuprof {
+	height: 3000px;
+	width: 60%;
+	margin-left: 10%;
+	margin-right: 10%;
+	min-width: 1000px;
+	background-color: white;
+	font-family: Raleway, sans-serif;
+	padding-top: 20px;
+	padding-left: 10%;
+	padding-right: 10%;
+	border-top:solid;
+	border-top-color: #F5F5F2;
+	border-top-width: 4px;
+	
+}
+
+
+
 #uploadform{
 	position: fixed;
 	background: #AFDBE2;
 	height: 300px;
-	width: 20%;
+	width: 350px;
 	border-style: solid;
 	border-color: #63B6AF;
 	border-width: 2px;
@@ -194,13 +248,14 @@
 	padding-top: 30px;
 	margin-top: -100px;
 	z-index: 1000;
+	min-width: 350px;
 }
 
 #uploadformerror{
 	position: fixed;
 	background: #AFDBE2;
 	height: 320px;
-	width: 20%;
+	width: 350px;
 	border-style: solid;
 	border-color: #63B6AF;
 	border-width: 2px;
@@ -208,6 +263,7 @@
 	margin-left: 40%;
 	padding-top: 30px;
 	margin-top: -100px;
+	min-width: 350px;
 	
 }
 
@@ -266,9 +322,12 @@
 	max-height:100px;
 	max-width:200px;
 }
+
+
 #form_image{
-height: auto;
-width: 60%;
+height: 400px;
+width: 200px;
+
 
 table-layout:fixed;
 
@@ -276,8 +335,11 @@ table-layout:fixed;
 #form_image td {
 word-wrap:break-word;
 }
+
+
+
 #footer {
-	display: block;
+	
 	height: 150px;
 	color: #4F7880;
 	padding-top: 30px;

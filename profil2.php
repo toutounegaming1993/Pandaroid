@@ -50,8 +50,8 @@
 	</header>
 	
     <body>
-		<div id="fond">
-			<div id="contenu">
+		<div id="fondprof">
+			<div id="contenuprof">
 		
 		<form id = "uploadform"  action="upload_photo.php" method="post" enctype="multipart/form-data" runat="server" >
 					<img id="sortir" src="Image/croix.png" alt="fermer" onClick="annuler4()"/>
@@ -134,7 +134,7 @@
 	
 	<footer>
 		<div id="footer">
-			MAI LAM + DUHESME COPYRIGHT MODAFUKA NERF DAT BITCH PLZZZ YOLO BBOY IN DA PLACE 
+			PandaRoid Copyright
 		</div>
 	</footer>
 	

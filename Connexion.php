@@ -196,7 +196,7 @@ if (isset($_POST['valider2']) AND $_POST['valider2'] == 'Valider') {
 	
 	<footer>
 		<div id="footer">
-		LA FAMILLE MON GARS OUI OUI LA FAMILLE
+		PandaRoid Copyright
 		</div>
 	</footer>
 </html>

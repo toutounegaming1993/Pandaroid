@@ -2,6 +2,10 @@ function onLoad(){
 	document.getElementById('uploadform').classList.add("hidden");
 }
 
+function info(){
+	document.getElementById('exif').classList.remove("hidden");
+}
+
 function photo(){
 	document.getElementById('uploadform').classList.remove("hidden");
 }

@@ -131,7 +131,7 @@ function req_amis($bdd){
 				$pren=$nom['prenom'];
 				
 			}
-			echo "<a href='profil.php?membre=$membre'>$pren $no</a>";
+			echo "<a href='profil.php?membre=$membre' class='b_social' >$pren $no</a>";
 	}
 }
 function diapo($bdd){
@@ -144,7 +144,7 @@ function diapo($bdd){
 	$sql = "SELECT * FROM photos ";
 	$sql .= " WHERE Proprietaire LIKE ".$_SESSION['id']." ";
 	$sql .= " OR Proprietaire IN ($amigass) ";
-	$sql .= " ORDER BY Date DESC LIMIT 10 ";
+	$sql .= " ORDER BY Date DESC  ";
 	$resultat = $bdd->query($sql);
 		$x=0;
 		while($diap=$resultat->fetch())
@@ -194,15 +194,16 @@ function mes_photos($bdd){
 			else
 				echo"<a href='actions.php?action=priver&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Rendre Privé</a><br><br>";
 			echo"<a href='actions.php?action=supprimer&membre=$mon_id&photo_id=$photo_nom' class='b_social'>Supprimer</a>";	
-			
+				
 			echo "</br></br>";
-			echo "<select id ='album' name='album'>";
-			echo '<option value=0">Aucun Album</option>';
-			get_album($bdd);
-			echo "</select>";
-			echo'<input id="submit" type="submit" name= "valider2" value="Valider"></br>';
+
+		
+			echo"<div id='b_info' >Informations</div><br><br>";
+			echo"<p id='exif'>";
+				
 			
 			info_exif($bdd,$photo_nom);
+			echo "</p>";
 			echo'</form>'; 
 			echo '</td>';
 			$x++; 
@@ -242,11 +243,18 @@ function photo_amis($bdd,$id_amis){
 	$resultat = $bdd->query($sql);
 	echo'<table>';
 	echo'<tr>';
+	$x=0;
 	while($diap=$resultat->fetch()){
+		if($x==0){      
+				echo "<tr>";
+
+			}elseif($x%5==0){
+					echo"</tr><tr>";
+			}
 	$nom=retourner_nom_amis($bdd,$diap['Proprietaire']);
 	$photo_id=$diap['id'];
 	echo '<td><a class="image_lien" data-lightbox="diapo"  data-title="'.$nom.' | '.$diap['Titre'].' | '.$diap['Lieu'].' | '.$diap['Date'].'" href="Images/'.$diap['Proprietaire'].'/'.$diap['Nom'].'"><span class="nom_proprietaire">'.$nom.'</span><img class="image_diapo" src="min/'.$diap['Proprietaire'].'/'.'mini'.'_'.''.$diap['Nom'].'"></a></td>';
-	
+	$x++;
 	}
 echo'</tr>';
 echo'</table>';		
@@ -325,7 +333,8 @@ function info_exif($bdd,$img)
 				}
 				
 			}
-		
+			
+
 			if(($largeur) AND ($hauteur)){
 				$resolution =$largeur.'*'.$hauteur;
 				echo "<span style='font-weight: bold;'>Resolution :</span><br />";
@@ -351,7 +360,7 @@ function info_exif($bdd,$img)
 
 
 		}
-		
+
 	}
 	else{
 			$extension = strtolower(  substr(  strrchr($img, '.')  ,1)  );

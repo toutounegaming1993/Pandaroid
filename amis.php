@@ -23,7 +23,7 @@
 			echo $prenom; 
 			?></a></li>
 			<li id="links"><a href="amis2.php">PARTAGER UNE PHOTO</a></li>
-			<li id="links"><a href="diapo.php">ALBUMS</a></li>
+			<li id="links"><a href="album.php">ALBUMS</a></li>
 			<li id="links"><a href="amis.php">AMIS</a></li>
 			<?php 
 			if($_SESSION['admin']=='1'){
@@ -92,7 +92,7 @@
 	
 	<footer>
 		<div id="footer">
-			MAI LAM + DUHESME COPYRIGHT MODAFUKA NERF DAT BITCH PLZZZ YOLO BBOY IN DA PLACE 
+			PandaRoid Copyright 
 		</div>
 	</footer>
 	

@@ -50,8 +50,8 @@
 	</header>
 	
     <body>
-		<div id="fond">
-			<div id="contenu">
+		<div id="fondprof">
+			<div id="contenuprof">
 		
 		<form id = "uploadform" class="hidden" action="upload_photo.php" method="post" enctype="multipart/form-data" runat="server" >
 					<img id="sortir" src="Image/croix.png" alt="fermer" onClick="annuler4()"/>
@@ -109,7 +109,7 @@
 							$res_dem = $bdd->query("SELECT * FROM req_amis WHERE demandeur='$membre' AND recepteur='$mon_id'");
 							$res_rec = $bdd->query("SELECT * FROM req_amis WHERE demandeur='$mon_id' AND recepteur='$membre'");
 							if($res_dem->rowCount()==1){
-								echo "<a href='actions.php?action=accepter&membre=$membre' class='b_social'> Accepter</a> | <a href='#' class='bouton'> Ignorer</a>";
+								echo "<a href='actions.php?action=accepter&membre=$membre' class='b_social'> Accepter</a> | <a href='#' class='b_social'> Ignorer</a>";
 							}
 							else if($res_rec->rowCount()==1){
 								echo "<a href='actions.php?action=annuler&membre=$membre' class='b_social'> Annuler la demande</a> ";
@@ -122,7 +122,7 @@
 					}
 					else
 					{
-						echo '<p> Mes photos: </p>';
+						echo '<p style="padding-left: 50px;"> <br> Mes photos: <br> </p><br> <br> ';
 						mes_photos($bdd);
 					}
 		
@@ -135,7 +135,7 @@
 	
 	<footer>
 		<div id="footer">
-			MAI LAM + DUHESME COPYRIGHT MODAFUKA NERF DAT BITCH PLZZZ YOLO BBOY IN DA PLACE 
+			PandaRoid Copyright
 		</div>
 	</footer>
 	
